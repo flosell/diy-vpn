@@ -13,8 +13,8 @@ Vagrant.configure('2') do |config|
 
   config.omnibus.chef_version = :latest
 
-  # config.vm.provision "chef_solo" do |chef|
-  #   chef.add_recipe "apache2"
-  # end
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "apache2"
+  end
 
 end

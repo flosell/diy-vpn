@@ -1,0 +1,14 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apache2 (1.9.6)
+      iptables (>= 0.0.0)
+      logrotate (>= 0.0.0)
+      pacman (>= 0.0.0)
+    iptables (0.13.0)
+    logrotate (1.5.0)
+    pacman (1.1.1)
+
+DEPENDENCIES
+  apache2 (>= 1.0.0)
+
