@@ -8,13 +8,13 @@ Vagrant.configure('2') do |config|
     provider.client_id = ENV["DIGITALOCEAN_CLIENT_ID"]
     provider.api_key = ENV["DIGITALOCEAN_API_KEY"]
     #provider.region = 'New York 2'
-    #provider.image = 'vpn set up'
+    provider.image = 'Debian 7.0 x64'
   end
 
   config.omnibus.chef_version = :latest
 
   config.vm.provision "chef_solo" do |chef|
-    chef.add_recipe "apache2"
+    chef.add_recipe "apt"
     chef.add_recipe "openvpn"
   end
 
