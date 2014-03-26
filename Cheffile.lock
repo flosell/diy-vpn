@@ -7,8 +7,15 @@ SITE
       pacman (>= 0.0.0)
     iptables (0.13.0)
     logrotate (1.5.0)
+    openvpn (2.1.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
     pacman (1.1.1)
+    yum (3.1.4)
+    yum-epel (0.3.4)
+      yum (~> 3.0)
 
 DEPENDENCIES
   apache2 (>= 1.0.0)
+  openvpn (= 2.1.0)
 
