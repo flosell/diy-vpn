@@ -18,8 +18,19 @@ Vagrant.configure('2') do |config|
     chef.add_recipe "apt"
     chef.add_recipe "openvpn"
     chef.add_recipe "openvpn::users"
+    chef.add_recipe "custom"
     chef.data_bags_path = "data_bags"
+    chef.json = {
+      "openvpn" => {
+        "script_security" => 2,
 
+        "routes" => [
+          "push \"redirect-gateway def1 bypass-dhcp\"",
+          "push \"dhcp-option DNS 8.8.8.8\"",
+          "push \"dhcp-option DNS 8.8.4.4\""
+        ]
+      }
+    }
   end
 
 end
