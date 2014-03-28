@@ -2,6 +2,7 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apt (2.3.8)
+    chef-solo-search (0.5.1)
     openvpn (2.1.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
@@ -11,5 +12,6 @@ SITE
 
 DEPENDENCIES
   apt (= 2.3.8)
+  chef-solo-search (= 0.5.1)
   openvpn (= 2.1.0)
 

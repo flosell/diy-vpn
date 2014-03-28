@@ -14,8 +14,12 @@ Vagrant.configure('2') do |config|
   config.omnibus.chef_version = :latest
 
   config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "chef-solo-search"
     chef.add_recipe "apt"
     chef.add_recipe "openvpn"
+    chef.add_recipe "openvpn::users"
+    chef.data_bags_path = "data_bags"
+
   end
 
 end

@@ -7,6 +7,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'apt', '= 2.3.8'
 cookbook 'openvpn', '= 2.1.0'
+cookbook 'chef-solo-search', '= 0.5.1'
 # cookbook 'rvm',
 #   :git => 'https://github.com/fnichol/chef-rvm'
 
