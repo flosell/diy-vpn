@@ -17,13 +17,24 @@
 # limitations under the License.
 #
 
+require 'net/http'
+
+def public_ip
+  Net::HTTP.get('myip.enix.org', '/REMOTE_ADDR') # => String
+end
+
 default['openvpn']['local']           = node['ipaddress']
 default['openvpn']['proto']           = 'udp'
 default['openvpn']['port']            = '1194'
 default['openvpn']['type']            = 'server'
 default['openvpn']['subnet']          = '10.8.0.0'
 default['openvpn']['netmask']         = '255.255.0.0'
-default['openvpn']['gateway']         = "vpn.#{node["domain"]}"
+if (node["domain"] == nil) 
+  default['openvpn']['gateway']       = public_ip
+  Chef::Log.info("using publicip #{default['openvpn']['gateway']}")
+else  
+  default['openvpn']['gateway']         = "vpn.#{node["domain"]}"
+end
 default['openvpn']['log']             = '/var/log/openvpn.log'
 default['openvpn']['key_dir']         = '/etc/openvpn/keys'
 default['openvpn']['signing_ca_key']  = "#{node["openvpn"]["key_dir"]}/ca.key"
