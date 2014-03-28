@@ -1,1 +1,3 @@
 Added the changes from this issue manually: https://github.com/xhost-cookbooks/openvpn/pull/17
+Added the changes to create tunnelblick-files directly to the cookbook. should be contributed to the openvpn-cookbook
+Added the changes to create a config with the public-ip of the server directly to the cookbook. could this be in the main project as well?
