@@ -53,12 +53,20 @@ else
       end
     end
 
+    bash "create-#{u['id']}-tblk " do 
+      cwd     node['openvpn']['key_dir']
+      code <<-EOL
+        mkdir #{u['id']}.tblk
+        cp ca.crt #{u['id']}.crt #{u['id']}.key #{u['id']}.conf #{u['id']}.ovpn #{u['id']}.tblk
+      EOL
+    end
+
     execute "create-openvpn-tar-#{u['id']}" do
       cwd     node['openvpn']['key_dir']
       command <<-EOH
-        tar zcf #{u['id']}.tar.gz ca.crt #{u['id']}.crt #{u['id']}.key #{u['id']}.conf #{u['id']}.ovpn
+        tar zcf #{u['id']}.tar.gz ca.crt #{u['id']}.crt #{u['id']}.key #{u['id']}.conf #{u['id']}.ovpn #{u['id']}.tblk/
       EOH
-      not_if { ::File.exists?("#{node["openvpn"]["key_dir"]}/#{u['id']}.tar.gz") }
+      # not_if { ::File.exists?("#{node["openvpn"]["key_dir"]}/#{u['id']}.tar.gz") }
     end
   end
 end
