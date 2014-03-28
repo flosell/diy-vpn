@@ -1,8 +1,7 @@
 Requirements
 ============
 
-* `vagrant-omnibus`
-* `vagrant-digitalocean`
+* `vagrant plugin install vagrant-digitalocean-omnibus vagrant-digitalocean`
 
 Configuration
 =============
