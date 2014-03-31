@@ -1,7 +1,8 @@
 Vagrant.configure('2') do |config|
-
+  config.ssh.private_key_path = '~/.ssh/id_rsa'
+  
   config.vm.provider :digital_ocean do |provider, override|
-    override.ssh.private_key_path = '~/.ssh/id_rsa'
+    
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
@@ -18,6 +19,7 @@ Vagrant.configure('2') do |config|
     rs.image    = /Debian 7/
     override.vm.box = "dummy"
     rs.rackspace_region = :lon
+    rs.public_key_path = '~/.ssh/id_rsa.pub'
   end
 
   config.omnibus.chef_version = :latest
