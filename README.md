@@ -1,7 +1,7 @@
 About 
 =====
 This is a turn-key solution to create your own VPN in the cloud. 
-this is a vagrant-template that sets up a VPN server on a cloud-hoster and set up the Tunnelblick-VPN app to use this server.
+It's a vagrant-template that uses chef to set up OpenVPN server on a cloud-hoster and a small script to pull the VPN-servers configuration and set up the Tunnelblick-VPN app on the client.
 
 Currently works with 
 * [DigitalOcean](https://digitalocean.com)
