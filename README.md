@@ -42,7 +42,7 @@ Setting up a VPN server
 
 Setting up a VPN client
 -----------------------
-* if you are on a Mac and are using tunnelblick, just execute `/set_up_vpn_client.sh`
+* if you are on a Mac and are using tunnelblick, just execute `./set_up_vpn_client.sh`
 * if you are on a different OS, have a look into the script to find out how to get the generated OpenVPN config from the server. (Basically, it's scp-ing a tar.gz that contains everything you need)
 
 Destroying your VPN server
