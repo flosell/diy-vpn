@@ -11,6 +11,15 @@ Vagrant.configure('2') do |config|
     provider.image = 'Debian 7.0 x64'
   end
 
+  config.vm.provider :rackspace do |rs, override|
+    rs.username = ENV["RACKSPACE_USERNAME"]
+    rs.api_key  = ENV["RACKSPACE_API_KEY"]
+    rs.flavor   = /512MB Standard Instance/
+    rs.image    = /Debian 7/
+    override.vm.box = "dummy"
+    rs.rackspace_region = :lon
+  end
+
   config.omnibus.chef_version = :latest
 
   config.vm.provision "chef_solo" do |chef|
