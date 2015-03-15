@@ -6,8 +6,6 @@ Vagrant.configure('2') do |config|
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    provider.client_id = ENV["DIGITALOCEAN_CLIENT_ID"]
-    provider.api_key = ENV["DIGITALOCEAN_API_KEY"]
     provider.token = ENV["DIGITALOCEAN_TOKEN"]
     provider.region = 'nyc3'
     provider.image = 'debian-7-0-x64'

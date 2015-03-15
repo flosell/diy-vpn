@@ -16,9 +16,6 @@ Setup
 * set up environment-variables: 
   * For Digitalocean: 
     ```bash
-    export DIGITALOCEAN_CLIENT_ID="<TODO>"
-    export DIGITALOCEAN_API_KEY="<TODO>"
-    // or Personal Access Tokens instead
     export DIGITALOCEAN_TOKEN="<TODO>"
     ```
 
