@@ -11,13 +11,15 @@ Setup
 =====
 
 * Install [Vagrant](http://www.vagrantup.com/downloads.html)
-* execute `vagrant plugin install vagrant-digitalocean-omnibus vagrant-digitalocean`
+* execute `vagrant plugin install vagrant-omnibus vagrant-digitalocean`
 * sign up for your favorite supported hoster
 * set up environment-variables: 
   * For Digitalocean: 
     ```bash
     export DIGITALOCEAN_CLIENT_ID="<TODO>"
     export DIGITALOCEAN_API_KEY="<TODO>"
+    // or Personal Access Tokens instead
+    export DIGITALOCEAN_TOKEN="<TODO>"
     ```
 
   * For Rackspace: 
