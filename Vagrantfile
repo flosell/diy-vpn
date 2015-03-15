@@ -8,8 +8,9 @@ Vagrant.configure('2') do |config|
 
     provider.client_id = ENV["DIGITALOCEAN_CLIENT_ID"]
     provider.api_key = ENV["DIGITALOCEAN_API_KEY"]
-    provider.region = 'New York 3'
-    provider.image = '7.0 x64'
+    provider.token = ENV["DIGITALOCEAN_TOKEN"]
+    provider.region = 'nyc3'
+    provider.image = 'debian-7-0-x64'
   end
 
   config.vm.provider :rackspace do |rs, override|
