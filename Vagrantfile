@@ -17,6 +17,8 @@ Vagrant.configure('2') do |config|
     rs.flavor   = /512MB Standard Instance/
     rs.image    = /Debian 7/
     override.vm.box = "dummy"
+    override.nfs.functional = false
+
     rs.rackspace_region = :lon
     rs.public_key_path = '~/.ssh/id_rsa.pub'
   end
