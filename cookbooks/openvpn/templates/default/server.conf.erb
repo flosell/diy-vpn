@@ -17,7 +17,6 @@ keepalive 10 120
 max-clients <%= @max_clients %>
 <% end -%>
 comp-lzo
-local <%= @local %>
 <% if @routes -%>
 <% @routes.each do |route| -%>
 <%= route %>
