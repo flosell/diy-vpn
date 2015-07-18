@@ -44,6 +44,8 @@ Setting up a VPN client
 * if you are on a Mac and are using tunnelblick, just execute `./set_up_vpn_client.sh`
 * if you are on a different OS, have a look into the script to find out how to get the generated OpenVPN config from the server. (Basically, it's scp-ing a tar.gz that contains everything you need)
 
+* [Optional] You can also specify a host to read the vpn-configuration from, as well as the name of the vpn e.g. `./set_up_vpn_client.sh root 10.0.0.1 my-vpn`. This is useful if you are regenerating your host from a saved image and just want an updated vpn configuration  
+
 Destroying your VPN server
 --------------------------
 The beauty of having a cloud-hoster is that it's cheap to destroy your VPN server when you are not using it: 
